@@ -1,16 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import Details from './components/Details';
 import Update from './components/Update';
 import Create from './components/Create';
 import Status from './components/Status';
+import Navbar from './components/Navbar';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Errors from './components/Errors';
 
 function App() {
   return (
     <BrowserRouter>
+    <Navbar/>
       <Switch>
         <Route exact path="/"> 
           <Home /> {/* --- the home page to display all the players --- */}
