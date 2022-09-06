@@ -26,42 +26,44 @@ function Home(props) {
 
 
     return (
-        <div className={css.box}>
-            <div className={css.divCenter}>
-                <Link to='/'>Manage Players</Link> |
-                <Link to='/status/game/'>Manage Player Status</Link>
-            </div>
-            <div>
-                <div className={css.divCenter}>
-                    <Link to='/'>List</Link> |
-                    <Link to='/new'>Add Player</Link>
-                </div>
-                {/* ------------------------- */}
-                {(useEffectDatd.length == 0) ? null :
-                    (<table className="table table-dark table-striped mt-3 text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Team Name</th>
-                                <th scope="col">Preferres Position</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {useEffectDatd.map(data => (
-                                <tr key={data._id} >
-                                    <td><Link to={'/' + data._id}>{data.name}</Link></td>
-                                    <td>{data.position}</td>
-                                    <td>
-                                        <Link className={css.btnUpdate} to={'/edit/' + data._id}>update</Link>
-                                        <Delete name={data.name} id={data._id} update={update} setUpdat={setUpdat}/>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>)}
-                {/* ------------------------- */}
-            </div>
-        </div>
+
+        <h1>hiiiiiiiii</h1>
+        // <div className={css.box}>
+        //     <div className={css.divCenter}>
+        //         <Link to='/'>Manage Players</Link> |
+        //         <Link to='/status/game/'>Manage Player Status</Link>
+        //     </div>
+        //     <div>
+        //         <div className={css.divCenter}>
+        //             <Link to='/'>List</Link> |
+        //             <Link to='/new'>Add Player</Link>
+        //         </div>
+        //         {/* ------------------------- */}
+        //         {(useEffectDatd.length == 0) ? null :
+        //             (<table className="table table-dark table-striped mt-3 text-center">
+        //                 <thead>
+        //                     <tr>
+        //                         <th scope="col">Team Name</th>
+        //                         <th scope="col">Preferres Position</th>
+        //                         <th scope="col">Actions</th>
+        //                     </tr>
+        //                 </thead>
+        //                 <tbody>
+        //                     {useEffectDatd.map(data => (
+        //                         <tr key={data._id} >
+        //                             <td><Link to={'/' + data._id}>{data.name}</Link></td>
+        //                             <td>{data.position}</td>
+        //                             <td>
+        //                                 <Link className={css.btnUpdate} to={'/edit/' + data._id}>update</Link>
+        //                                 <Delete name={data.name} id={data._id} update={update} setUpdat={setUpdat}/>
+        //                             </td>
+        //                         </tr>
+        //                     ))}
+        //                 </tbody>
+        //             </table>)}
+        //         {/* ------------------------- */}
+        //     </div>
+        // </div>
     );
 
 }
