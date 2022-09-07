@@ -42,9 +42,7 @@ function Home(props) {
       <div className="col text-center mt-5">
         <img src={empty} alt="home empty" width="200px" className="mb-4" />
         <h3>Sorry .. there is no plants yet</h3>
-        <p style={{ color: "#9d9d9d" }}>
-          Click the add button to have track one
-        </p>
+        <p style={{ color: "#9d9d9d" }}>Click the add button to track one</p>
       </div>
       <Fab color="primary" aria-label="add" style={fabStyle}>
         <AddIcon />
