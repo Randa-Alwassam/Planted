@@ -11,3 +11,4 @@ module.exports = app => {
   app.put("/api/plants/update/:id", PlantController.updateExistingPlant);
   app.delete("/api/plants/delete/:id", PlantController.deleteAnExistingPlant);
 };
+

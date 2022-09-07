@@ -11,8 +11,9 @@ const TaskSchema = new mongoose.Schema({
 		type: Date,
 		required: true
 	},
-	isDode: {
+	isDone: {
 		type: Boolean,
+		default: false,
 	},
 	plants:{
 		type: mongoose.Types.ObjectId,

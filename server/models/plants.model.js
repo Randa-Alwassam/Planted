@@ -15,7 +15,6 @@ const PlantSchema = new mongoose.Schema({
 		type: Date,
 		required: true
 	},
-
 	tasks: [{
 		type: mongoose.Types.ObjectId,
         ref: "Task"

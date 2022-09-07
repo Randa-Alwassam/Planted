@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import axios from "axios";
 import { BrowserRouter, Switch, Route, Link, useHistory } from "react-router-dom";
 
-// --- I hope you enjoy my coding, and I hope it helps you 😊 --- Arwa ALZanbaki 
-
 function Create(props) {
 
     const history = useHistory();
