@@ -11,6 +11,11 @@ const PlantSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	plantAge: {
+		type: Date,
+		required: true
+	},
+
 	tasks: [{
 		type: mongoose.Types.ObjectId,
         ref: "Task"

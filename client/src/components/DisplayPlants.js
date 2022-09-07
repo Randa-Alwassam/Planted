@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import css from './Styles.module.css';
+import css from './css/DisplayPlants.module.css';
 import { useEffect } from 'react';
 import axios from "axios";
 import { BrowserRouter, Switch, Route, Link, useParams } from "react-router-dom";
@@ -21,15 +21,24 @@ function Display(props) {
 
     return (
         <div className="plants-container">
-            {plants.map(plant => (
-                <div key={plant._id}>
-                    <Link to={"/plants/" + plant._id}>
-                        {/* <div><img src={plant.image} /></div> */}
-                        <div> {plant.plantName} </div>
-                    </Link>
-                </div>
-            ))}
-            <Link to="/plants/new"><img src={add}></img></Link>
+            {(plants.length == 0) ?
+                (<div className={css.sorry}>
+                    <h3 className="mb-5">sorry you don't have any plants ... 🍂</h3>
+                    <Link to={'/intro'} className={css.intro}>What is planted ❔</Link>
+                </div>)
+                :
+                (<div>
+                    {plants.map((plant) => (
+                        <div key={plant._id} className={css.card}>
+                            <Link to={"/plants/" + plant._id}>
+                                {/* <div><img src={plant.image} /></div> */}
+                                <div> {plant.plantName} </div>
+                            </Link>
+                        </div>
+                    ))}
+                </div>)
+            }
+            <Link to="/plants/new" className={css.addbtn}><img src={add}></img></Link>
         </div>
     )
 }

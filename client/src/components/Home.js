@@ -1,69 +1,76 @@
 import React, { Component, useState } from "react";
-import css from './Styles.module.css';
+import css from './css/Styles.module.css';
+import image from "./img/logo_picture.svg"
 import { useEffect } from 'react';
 import axios from "axios";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link ,useHistory} from "react-router-dom";
 import Delete from "./Delete";
 
-// --- I hope you enjoy my coding, and I hope it helps you 😊 --- Arwa ALZanbaki 
 
 function Home(props) {
+    const history = useHistory();
 
-    const [useEffectDatd, setUseEffectDatd] = React.useState([]);
-    const [update, setUpdat] = React.useState(false);
+    const [data , setData] = useState({
+        username: "",
+        plants: []
+    })
+
+    const [errors, setErrors] = React.useState({
+        nameError: "",
+    });
+
+    const onsubmitFunction = (event) => {
+        //prevent default behavior of the submit
+        event.preventDefault();
+
+        console.log(axios)
+        axios.post("http://localhost:8000/api/users/new", { ...data })
+            .then(res => {
+                console.log(res);
+                if ('error' in res.data) {
+                    setErrors({ ...errors, nameError: res.data.error.errors.username.message })
+                } else {
+                    setErrors({ ...errors, nameError: "" })
+                    history.push('/');
+                }
+            })
+            .catch(err => console.log(err));
+    }
+
+    const handleOnChange = (event) => {
+        event.preventDefault();
+        setErrors()
+        setData({ ...data, [event.target.name]: event.target.value })
+        console.log(event.target.name);
+    }
 
     useEffect(() => {
         console.log("--- I'm in useEffect --- ");
-        axios.get('http://localhost:8000/api/players/')
-            .then(res => {
-                console.log(res.data);
-                setUseEffectDatd(res.data)
-            })
-            .catch((error) => console.log(error))
-        setUpdat(true)
-        console.log("--- the end of useEffect --- ");
-    }, [update])
+    }, [])
 
 
     return (
+        <div className={css.home}>
+            <img src={image}/>
+            <h1>planted</h1>
+            <div>
+                {/* ----- the div the display the errors -----  */}
+                {(errors.nameError != '') ? (<div className="alert alert-danger">{errors.nameError}</div>) : null}
+                {/* ----- the end of the div errors ----- */}
 
-        <h1>hiiiiiiiii</h1>
-        // <div className={css.box}>
-        //     <div className={css.divCenter}>
-        //         <Link to='/'>Manage Players</Link> |
-        //         <Link to='/status/game/'>Manage Player Status</Link>
-        //     </div>
-        //     <div>
-        //         <div className={css.divCenter}>
-        //             <Link to='/'>List</Link> |
-        //             <Link to='/new'>Add Player</Link>
-        //         </div>
-        //         {/* ------------------------- */}
-        //         {(useEffectDatd.length == 0) ? null :
-        //             (<table className="table table-dark table-striped mt-3 text-center">
-        //                 <thead>
-        //                     <tr>
-        //                         <th scope="col">Team Name</th>
-        //                         <th scope="col">Preferres Position</th>
-        //                         <th scope="col">Actions</th>
-        //                     </tr>
-        //                 </thead>
-        //                 <tbody>
-        //                     {useEffectDatd.map(data => (
-        //                         <tr key={data._id} >
-        //                             <td><Link to={'/' + data._id}>{data.name}</Link></td>
-        //                             <td>{data.position}</td>
-        //                             <td>
-        //                                 <Link className={css.btnUpdate} to={'/edit/' + data._id}>update</Link>
-        //                                 <Delete name={data.name} id={data._id} update={update} setUpdat={setUpdat}/>
-        //                             </td>
-        //                         </tr>
-        //                     ))}
-        //                 </tbody>
-        //             </table>)}
-        //         {/* ------------------------- */}
-        //     </div>
-        // </div>
+                <form onSubmit={onsubmitFunction}>
+                    <div>
+                        <input type="text" name="username" value={data.username} onChange={handleOnChange} required />
+                    </div>
+                    <div>
+                        <input type="submit" value='Submit' className='btn btn-primary mx-2' />
+                        <Link to='/' className={css.btnCancel} >Cancel</Link>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
     );
 
 }

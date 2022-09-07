@@ -11,9 +11,6 @@ const UserSchema = new mongoose.Schema({
 		type: mongoose.Types.ObjectId,
         ref: "Plant"
 	}],
-	// plants: {
-	// 	type: Array,
-	// }
 
 }, { timestamps: true });
 

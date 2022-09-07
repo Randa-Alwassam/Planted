@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Errors from './components/Errors';
 
 function App() {
+  
   return (
     <BrowserRouter>
     <Navbar/>
