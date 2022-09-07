@@ -39,18 +39,10 @@ module.exports.createNewTask = (req, res) => {
 
 // --- function to update a task
 module.exports.updateExistingTask = (req, res) => {
-  Task.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+  Task.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true , runValidators:true})
     .then(updatedTask => res.json({ task: updatedTask }))
     .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
-
-// ------------------------------
-// findByIdAndUpdate(req.params.id, req.body, { new: true,runValidators:true}
-// module.exports.updateExistingTaskPartTow = (req, res) => {
-//   Task.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true , runValidators:true})
-//     .then(updatedTask => res.json({ task: updatedTask }))
-//     .catch(err => res.json({ message: "Something went wrong", error: err }));
-// };
 // ------------------------------
 
 // --- function to delete a task

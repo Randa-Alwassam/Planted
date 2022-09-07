@@ -1,12 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import css from './Styles.module.css';
-import { useEffect } from 'react';
 import axios from "axios";
-import { BrowserRouter, Switch, Route, Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import add from './add.svg';
 
 function Display(props) {
-    //set variables
     const [plants, setPlants] = useState([]);
     const { id } = useParams();
 
@@ -23,7 +21,7 @@ function Display(props) {
         <div className="plants-container">
             {plants.map(plant => (
                 <div key={plant._id}>
-                    <Link to={"/plants/" + plant._id}>
+                    <Link to={"/plants/tasks/" + plant._id}>
                         {/* <div><img src={plant.image} /></div> */}
                         <div> {plant.plantName} </div>
                     </Link>
