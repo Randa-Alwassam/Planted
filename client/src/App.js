@@ -15,7 +15,7 @@ function App() {
   
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
       <Switch>
       <AppContext.Provider value={{user , setUser}}>
       <Route exact path="/"> 
