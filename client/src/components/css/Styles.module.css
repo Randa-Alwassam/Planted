@@ -60,6 +60,29 @@
     align-items: center;
 }
 
+.input{
+    border: 1px solid #326e62;
+    border-radius: 30px;
+    height: 40px;
+    width: 345px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.loginbtn{
+    background-color: rgb(50, 110, 98);
+    border: none;
+    border-radius: 30px;
+    width: 345px;
+    height: 40px;
+}
+
+.nulldiv{
+    height: 60px;
+    width: 340px;
+    margin-bottom: 16px;
+}
+
 .card {
     margin-top: 25px;
     margin-left: auto;

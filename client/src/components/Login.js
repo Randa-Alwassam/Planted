@@ -1,14 +1,15 @@
-import React, { Component, useState ,useContext } from "react";
+import React, { useContext, Component, useState } from "react";
 import css from './css/Styles.module.css';
 import image from "./img/logo_picture.svg"
 import planted from "./img/planted.png"
 import { useEffect } from 'react';
 import axios from "axios";
 import { BrowserRouter, Switch, Route, Link ,useHistory} from "react-router-dom";
+import Delete from "./Delete";
 import AppContext from "../context"
 
 
-function Home(props) {
+function Login(props) {
     const history = useHistory();
     const {user, setUser} = useContext(AppContext);
 
@@ -26,7 +27,7 @@ function Home(props) {
         event.preventDefault();
 
         console.log(axios)
-        axios.post("http://localhost:8000/api/users/new", { ...data })
+        axios.get("http://localhost:8000/api/users/name/"+data.username)
             .then(res => {
                 console.log(res);
                 if ('error' in res.data) {
@@ -34,11 +35,12 @@ function Home(props) {
                 } else {
                     setErrors({ nameError: "" })
                     setUser(res.data.user)
-                    history.push('/');
+                    history.push('/users/plants/'+res.data.user._id);
                 }
             })
             .catch(err => console.log(err));
     }
+
 
     const handleOnChange = (event) => {
         //prevent default behavior of the submit
@@ -65,7 +67,7 @@ function Home(props) {
                 <form onSubmit={onsubmitFunction}>
                     <div className="d-flex flex-column">
                         <input type="text" name="username" value={data.username} onChange={handleOnChange} required  className={css.input}/>
-                        <input type="submit" value='Signup' className={css.loginbtn} />
+                        <input type="submit" value='Login' className={css.loginbtn} />
                     </div>
                 </form>
             </div>
@@ -75,4 +77,4 @@ function Home(props) {
 
 }
 
-export default Home;
+export default Login;

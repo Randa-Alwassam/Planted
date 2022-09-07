@@ -26,7 +26,25 @@ AllMyUsersRoutes(app);
 const AllMyTasksRoutes = require("./server/routes/tasks.routes");
 AllMyTasksRoutes(app);
 
-app.listen(8000, () => console.log("The server is all fired up on port 8000"));
+const AllMessagesRoutes = require("./server/routes/message.routes");
+AllMessagesRoutes(app);
 
+const server = app.listen(8000, () =>
+    console.log('The server is all fired up on port 8000')
+);
 
+// app.listen(8000, () => console.log("The server is all fired up on port 8000"));
+
+const io = require('socket.io')(server, { cors: true });
+//const sockets = (await io.fetchSockets()).map(socket => socket.id);
+
+io.on('connection',socket =>{
+    console.log('nice to meet you, handshake..')
+
+    // event listner 2
+    socket.on("handle_message_receive", (data) => {
+        io.emit("add_message", data)
+    });
+
+})
 // Norah Adding to Test بس أجرب..

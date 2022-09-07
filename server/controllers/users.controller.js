@@ -21,6 +21,13 @@ module.exports.findOneSingleUser = (req, res) => {
     .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
+// --- function to get a single user by name
+module.exports.findOneSingleUserByName = (req, res) => {
+  User.findOne({ username: req.params.username })
+    .then(oneSingleUser => res.json({ user: oneSingleUser }))
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
+
 // --- function to get a single user plants --- this is rigth 😍🤩 ---
 module.exports.findOneSingleUserPlants = (req, res) => {
   User.findOne({ _id: req.params.id }).populate("plants")

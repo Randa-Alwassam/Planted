@@ -1,7 +1,7 @@
 import React, { Component, useState , useEffect} from "react";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import css from './Styles.module.css';
+import css from '../Styles.module.css';
 import axios from 'axios';
 import back from './back.svg';
 import { Link, useParams, useHistory } from "react-router-dom";
