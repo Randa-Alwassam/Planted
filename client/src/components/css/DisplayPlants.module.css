@@ -58,16 +58,17 @@ border: 1px solid #242424;
 }
 
 .card{
-    background-color: #d0b7b314;
+    background-color: #ffffffc4;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0px 4px 5px gainsboro;
     border: 1px solid antiquewhite;
+    margin-right: 50px;
 }
 
 .addbtn{
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 25px;
 }
@@ -79,4 +80,51 @@ border: 1px solid #242424;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+}
+.pic{
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+.box{
+    display: flex;
+    /* background-color: gainsboro; */
+    padding: 20px;
+    /* margin-top: 50px; */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px;
+    font-family: cursive;
+    padding: 23px 40px 40px 40px;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    position: relative;
+}
+.task{
+    display: flex;
+    /* background-color: gainsboro; */
+    border: 1px solid #637255;
+    /* margin-top: 50px; */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #668e3f73;
+    font-family: cursive;
+    padding: 15px;
+    flex-direction: row;
+    /* align-items: center; */
+    width: 360px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.check{
+    width: 30px;
+    border-radius: 30px
+}
+
+.alink{
+    color: #374848;
+    text-decoration: auto;
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 20px;
 }

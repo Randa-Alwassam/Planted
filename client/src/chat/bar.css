@@ -1,0 +1,14 @@
+.bar {
+    background-color: #326e62;
+    border-radius: 15px;
+}
+
+.opBcolor{
+    background-color: #326e6294;
+    border-radius: 15px;
+}
+.noColor{
+    background-color: transparent;
+    border-radius: 15px;
+
+}

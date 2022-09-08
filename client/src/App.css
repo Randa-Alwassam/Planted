@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  background-image: url("Artwork.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cut{
+  height: 100px;
+  position: absolute;
+  right: -19px;
+  top: -10px;
+}

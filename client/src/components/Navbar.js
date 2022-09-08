@@ -1,17 +1,18 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState , useContext } from "react";
 import css from "./css/Navbar.module.css";
 import { useEffect } from "react";
 import axios from "axios";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link, useHistory, } from "react-router-dom";
+// import cutlogo from "./img/login.png"
+import { useRadioGroup } from "@mui/material";
+import AppContext from "../context";
+
 
 function Navbar(props) {
+  // const {user, setUser , signed, setSigned} = useContext(AppContext);
+
   const [welcome, setWelcome] = useState("Planter");
+  const { user, setUser, signed, setSigned } = useContext
 
   // --- to import the images from the folder img/navbar * ---
   function importAll(r) {
@@ -32,26 +33,21 @@ function Navbar(props) {
 
   return (
     <div>
-      <div className={css.sidebar}>
-        <div className={css.inside}>
-          <Link to={"/"}>
-            <img src={images["home.png"]} className={css.img} />
-          </Link>
-          <Link to={"/users/new"}>
-            <img src={images["user.png"]} className={css.img} />
-          </Link>
-          <Link to={"/users/chat"}>
-            <img src={images["chat.png"]} className={css.img} />
-          </Link>
-          <Link to={"/users/chat"}>
-            <img src={images["search.png"]} className={css.img} />
-          </Link>
-        </div>
-        <Link to={"/"}>
-          <img src={images["help.png"]} className={css.img} />
-        </Link>
-      </div>
-    </div>
+      {/* <div className={css.sidebar}> */}
+                <div>
+                    <div className={css.inside}>
+                        {/* <Link to={'/users/plants/'+ user._id}><img src={images['home.png']} className={css.img} /></Link> */}
+                        <Link to={'/'}><img src={images['home.png']} className={css.img} /></Link>
+                        <Link to={'/login'}><img src={images['user.png']} className={css.img} /></Link>
+                        <Link to={'/chat'}><img src={images['chat.png']} className={css.img} /></Link>
+                        <Link to={'/users/plants/'}><img src={images['s.png']} className={css.img} /></Link>
+                        <Link to={'/info'}><img src={images['help.png']} className={css.img} /></Link>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+    // </div>
   );
 }
 

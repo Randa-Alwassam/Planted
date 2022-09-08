@@ -19,6 +19,7 @@ const PlantSchema = new mongoose.Schema({
 		type: mongoose.Types.ObjectId,
         ref: "Task"
 	}],
+	image :String
 	
 	// userId: {
 	// 	type: mongoose.Types.ObjectId,

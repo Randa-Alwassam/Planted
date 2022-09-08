@@ -1,0 +1,86 @@
+.boxCard {
+    margin-left: 20px;
+    margin-right: 65px;
+}
+
+.plant {
+    background-image: url("plant_2.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5
+}
+
+.p {
+    background-image: url("p.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+}
+
+.p2 {
+    background-image: url("p_2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+/* -------------- */
+
+.fabStyle {
+    position: "absolute";
+    top: 36;
+    right: 36;
+    background-color: "#81b8a8";
+}
+
+/* ------------- */
+
+/* .inputFile::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.inputFile::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.inputFile:hover::before {
+    border-color: black;
+}
+
+.inputFile:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+} */
+
+.plantImage {
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 50px;
+}
+.plantTask{
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    width: 120px;
+    box-shadow: 2px 2px 6px #000000a8;
+    border: 1px solid #326e626e;
+    margin-bottom: 15px;
+}

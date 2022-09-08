@@ -11,7 +11,7 @@ import AppContext from "../context"
 
 function Login(props) {
     const history = useHistory();
-    const {user, setUser} = useContext(AppContext);
+    const {user, setUser , signed, setSigned} = useContext(AppContext);
 
     const [data , setData] = useState({
         username: "",
@@ -34,8 +34,9 @@ function Login(props) {
                     setErrors({ nameError: res.data.error.errors.username.message })
                 } else {
                     setErrors({ nameError: "" })
-                    setUser(res.data.user)
-                    history.push('/users/plants/'+res.data.user._id);
+                    setUser(res.data.user);
+                    setSigned(true);
+                    history.push('/users/plants/');
                 }
             })
             .catch(err => console.log(err));

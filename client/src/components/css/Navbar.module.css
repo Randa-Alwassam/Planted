@@ -21,7 +21,7 @@ border: 1px solid #242424;
     position: fixed;
     right: 0px;
     top:0px;
-    background-color: #4f837712;
+    background-color: #c8d6d3a1;
     /* border-radius: 30px; */
     padding: 15px;
     height: -webkit-fill-available;
@@ -37,7 +37,7 @@ border: 1px solid #242424;
     top:0px;
     background-color: #4f837712;
     /* border-radius: 30px; */
-    padding: 15px;
+    padding: 55px 15px 15px 15px;
     height: -webkit-fill-available;
 }
 

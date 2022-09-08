@@ -13,7 +13,10 @@ require("./server/config/mongoose.config");
 app.use(express.json(), express.urlencoded({ extended: true }));
 
 var bodyParser = require('body-parser')
-app.use(bodyParser.json());
+// app.use(bodyParser.json(), bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bodyParser.text({ limit: '200mb' }));
 // This is where we import the plants routes function from our plants.routes.js file
 const AllMyPlantsRoutes = require("./server/routes/plants.routes");
 AllMyPlantsRoutes(app);

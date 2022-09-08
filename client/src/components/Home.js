@@ -10,7 +10,7 @@ import AppContext from "../context"
 
 function Home(props) {
     const history = useHistory();
-    const {user, setUser} = useContext(AppContext);
+    const {user, setUser , signed, setSigned} = useContext(AppContext);
 
     const [data , setData] = useState({
         username: "",
@@ -33,7 +33,8 @@ function Home(props) {
                     setErrors({ nameError: res.data.error.errors.username.message })
                 } else {
                     setErrors({ nameError: "" })
-                    setUser(res.data.user)
+                    setUser(res.data.user);
+                    setSigned(true);
                     history.push('/');
                 }
             })
@@ -57,7 +58,7 @@ function Home(props) {
         <div className={css.home}>
             <img src={image}/>
             <img src={planted} className="mt-5 mb-3"/>
-            <div>
+            <div className="d-flex flex-column align-items-center">
                 {/* ----- the div the display the errors -----  */}
                 {(errors.nameError != '') ? (<div className="alert alert-danger">{errors.nameError}</div>) : (<div className={css.nulldiv} ></div>)}
                 {/* ----- the end of the div errors ----- */}
