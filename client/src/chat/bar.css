@@ -12,3 +12,25 @@
     border-radius: 15px;
 
 }
+
+.img{
+    height: 40px ;
+    margin-right: 10px;
+}
+
+.div-bar{
+    background-color: #326e6294;
+    border-radius: 15px;
+    height: 64px;
+    margin: 0px 46px 20px 24px;
+    padding: 15px;
+    display: flex;
+    font-family: cursive;
+    align-items: center;
+}
+
+h3{
+    font-family: cursive;
+    margin: 0px;
+    color: #2a5149;
+}

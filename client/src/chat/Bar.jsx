@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { Fragment } from "react";
 import ChatIcon from '@mui/icons-material/ForestTwoTone';
 import './bar.css';
-import plantPic from "../plants/potted-plant.png";
+import plantPic from "../plants/trees.png";
 export default function Bar() {
 
     // --- ui material bar ---
@@ -28,8 +28,8 @@ export default function Bar() {
     // --- our bar ---
 
     return (
-        <div >
-            <img src={plantPic} alt="plant in a pote"/>
+        <div className='div-bar'>
+            <img src={plantPic} alt="plant in a pote" className='img'/>
             <h3>Planted Chat</h3>
         </div>
     )
