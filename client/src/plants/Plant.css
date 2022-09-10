@@ -75,7 +75,8 @@
     border-radius: 50%;
     width: 50px;
 }
-.plantTask{
+
+.plantTask {
     height: 120px;
     object-fit: cover;
     border-radius: 15px;
@@ -83,4 +84,11 @@
     box-shadow: 2px 2px 6px #000000a8;
     border: 1px solid #326e626e;
     margin-bottom: 15px;
+}
+
+.delete {
+    position: absolute;
+    right: 0px;
+    width: 75px;
+    border-radius: 10px;
 }

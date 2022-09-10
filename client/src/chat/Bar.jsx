@@ -4,24 +4,36 @@ import { Box } from "@mui/system";
 import { Fragment } from "react";
 import ChatIcon from '@mui/icons-material/ForestTwoTone';
 import './bar.css';
+import plantPic from "../plants/potted-plant.png";
 export default function Bar() {
 
+    // --- ui material bar ---
+    // return (
+    //     <Fragment className="bar">
+    //         <Box m={3} mr={6} className="bar">
+    //             <AppBar position="static" className='bar'>
+    //                 <Toolbar className='bar'>
+    //                     <Box mr={2}>
+    //                         <ChatIcon fontSize={'large'} />
+    //                     </Box>
+    //                     <Typography variant="h6">
+    //                         Planted Chat
+    //                     </Typography>
+    //                 </Toolbar>
+    //             </AppBar>
+    //         </Box>
+    //     </Fragment>
+    // )
+
+    // --- our bar ---
+
     return (
-        <Fragment className="opBcolor">
-            <Box m={3} mr={6} className="opBcolor">
-                <AppBar position="static" className='noColor'>
-                    <Toolbar className='noColor'>
-                        <Box mr={2}>
-                            <ChatIcon fontSize={'large'}/>
-                        </Box>
-                        <Typography variant="h6">
-                            Planted Chat
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-        </Fragment>
+        <div >
+            <img src={plantPic} alt="plant in a pote"/>
+            <h3>Planted Chat</h3>
+        </div>
     )
+
 }
 
 {/* <Fragment className='opBcolor'>

@@ -31,6 +31,7 @@ function Create(props) {
         "Indoor",
         "Fruits",
         "Veggies",
+        "Flower",
     ];
     const [value, setValue] = useState(plantsType[0]);
     const [inputValue, setInputValue] = useState("");

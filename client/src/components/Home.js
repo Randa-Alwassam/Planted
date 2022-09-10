@@ -35,7 +35,7 @@ function Home(props) {
                     setErrors({ nameError: "" })
                     setUser(res.data.user);
                     setSigned(true);
-                    history.push('/');
+                    history.push('/users/plants/');
                 }
             })
             .catch(err => console.log(err));

@@ -82,7 +82,7 @@ export default function Chatroom() {
             {loadingMsg && loadingUser && signed ?
                 <>
                     <Bar />
-                    <ChatImg chatMessages={chatMessages} user={user} refresh={refresh} setRefresh={setRefresh} />
+                    <Chat chatMessages={chatMessages} user={user} refresh={refresh} setRefresh={setRefresh} />
                 </>
                 :
                 <img src={loading} alt="loading" style={{borderRadius: "15px"}}/>

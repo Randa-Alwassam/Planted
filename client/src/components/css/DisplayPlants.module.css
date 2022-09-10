@@ -65,6 +65,7 @@ border: 1px solid #242424;
     box-shadow: 0px 4px 5px gainsboro;
     border: 1px solid antiquewhite;
     margin-right: 50px;
+    position: relative;
 }
 
 .addbtn{

@@ -68,6 +68,8 @@ export default function Chat(props) {
                     message: chatMsg.message,
                 }
                 socket.emit("handle_message_receive", msgToSocket);
+                chatMsg.message = ''
+
             })
             .catch(err => console.log(err))
     }
@@ -116,7 +118,7 @@ export default function Chat(props) {
                                 </FormControl>
                             </Grid>
                             {/* 3 */}
-                            <Grid xs={6} item>
+                            <Grid xs={9} item>
                                 <FormControl fullWidth>
                                     <TextField onChange={handleUserChange}
                                         value={chatMsg.message}

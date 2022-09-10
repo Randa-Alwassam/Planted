@@ -75,7 +75,7 @@ export default function Chat(props) {
                     image:chatMsg.image,
                     message: chatMsg.message,
                 }
-                console.log("user" + user)
+                console.log("user" + msgToSocket)
                 socket.emit("handle_message_receive", msgToSocket);
             })
             .catch(err => console.log(err))

@@ -7,6 +7,7 @@ import add from './add.svg';
 import noPlants from './noPlant.svg';
 import "./Plant.css"
 import AppContext from "../context"
+import Delete from "../components/Delete";
 
 function Display(props) {
     const [plants, setPlants] = useState([]);
@@ -32,7 +33,7 @@ function Display(props) {
                 (<div className={css.sorry}>
                     <img src={noPlants} className="mb-5"/>
                     <h3 className="mb-5">sorry you don't have any plants ... 🍂</h3>
-                    <Link to={'/intro'} className={css.intro}>What is planted ❔</Link>
+                    <Link to={'/info'} className={css.intro}>What is planted ❔</Link>
                 </div>)
                 :
                 (<div>
@@ -45,12 +46,13 @@ function Display(props) {
                                 {/* <div ><img src={plant.image} className="plantImage" /></div>
                                 <div className="p"></div> */}
                                 <div> {plant.plantName} </div>
+                                <Delete id={plant._id} className="delete"/>
                             </Link>
                         </div>
                     ))}
                 </div>)
             }
-            <Link to={"new/"+user._id} className={css.addbtn}><img src={add}></img></Link>
+            <Link to={"new/"} className={css.addbtn}><img src={add}></img></Link>
         </div>
     )
 }

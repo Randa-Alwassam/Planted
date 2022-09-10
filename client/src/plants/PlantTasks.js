@@ -64,12 +64,15 @@ function Tasks(props) {
       y--;
     }
     if (m === 0 && y === 0) {
-      return "Couple Days";
+      return "is Couple Days old";
+    }
+    if( y < 0 ){
+      return ", not seeded yet.."
     }
     if (y === 0) {
-      return `${m} months`;
+      return `is ${m} months old`;
     }
-    return `${y} years and ${m} months`;
+    return `is ${y} years and ${m} months old`;
   }
 
   const plantAge = getAge(plant.plantAge);
@@ -122,9 +125,9 @@ function Tasks(props) {
         <p>{plant.plantName} {plantAge}</p>
         <div className={css.divCenter}>
           {tasks.map((task) => (
-            <div className={css2.task}>
+            <div className={css2.task}> 
               {task.taskName}
-              {task.data}
+              <samp>{task.date.slice(0, 10)}</samp>
               <input type="checkbox" value={task.isDone} checked={task.isDone} onClick={(e) => changehandle(task._id)} className={css2.check} />
             </div>
           ))}

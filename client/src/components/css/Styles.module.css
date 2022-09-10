@@ -288,11 +288,11 @@
 
 .btnDelete {
     height: 35px;
-    width: 100px;
+    /* width: 100px; */
     margin: 2px 20px;
     color: #712525;
     border-left: 0px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border-right: 0px;
     border: 2px 2px 2px 2px solid;
     border-bottom: 1px solid #deb9b9;
@@ -302,6 +302,10 @@
     font-size: initial;
     background-color: #f3dada;
     box-shadow: 2px 2px 2px;
+    position: absolute;
+    right: 0px;
+    width: 75px;
+    border-radius: 10px;
 }
 
 .btnDelete:hover {
